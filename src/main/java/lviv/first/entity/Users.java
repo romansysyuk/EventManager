@@ -8,12 +8,12 @@ import java.util.List;
  */
 @Entity
 public class Users {
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private long id;
 
-
+    @Id
     @Column(length = 55, nullable = false,unique = true,name = "username")
     private String username;
 
