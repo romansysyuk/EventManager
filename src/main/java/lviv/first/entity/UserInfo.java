@@ -9,6 +9,12 @@ import java.util.Date;
  * Created by kobeb on 23.05.2016.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "UserInfo.findByName", query = "Select a from UserInfo a where a.firstName like: firstName "),
+        @NamedQuery(name = "UserInfo.findByTwoName", query = "select a from UserInfo a where a.firstName like: firstName and a.lastName like:lastName"),
+        @NamedQuery(name = "UserInfo.findByUsername",query = "select a from UserInfo a where a.username like: username")
+
+})
 public class UserInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

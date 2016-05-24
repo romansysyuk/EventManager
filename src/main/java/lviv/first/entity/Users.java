@@ -7,6 +7,10 @@ import java.util.List;
  * Created by kobeb on 23.05.2016.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Users.findByUsername",query = "select a from Users a where a.username like :username")
+
+})
 public class Users {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +18,7 @@ public class Users {
     private long id;
 
     @Id
-    @Column(length = 55, nullable = false,unique = true,name = "username")
+    @Column(length = 55, nullable = false,unique = true)
     private String username;
 
     @Column(length = 55, nullable = false)
