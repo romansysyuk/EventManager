@@ -3,12 +3,11 @@ package lviv.first.entity;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by kobeb on 23.05.2016.
- */
+
+
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Users.findByUsername",query = "select a from Users a where a.username like :username")
+        @NamedQuery(name = "Users.findByUsername", query = "select a from Users a where a.username like :username")
 
 })
 public class Users {
@@ -18,7 +17,7 @@ public class Users {
     private long id;
 
     @Id
-    @Column(length = 55, nullable = false,unique = true)
+    @Column(length = 55, nullable = false, unique = true)
     private String username;
 
     @Column(length = 55, nullable = false)

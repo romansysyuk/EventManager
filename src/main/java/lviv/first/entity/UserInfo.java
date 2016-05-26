@@ -1,18 +1,15 @@
 package lviv.first.entity;
 
 
-
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by kobeb on 23.05.2016.
- */
+
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "UserInfo.findByName", query = "Select a from UserInfo a where a.firstName like: firstName "),
-        @NamedQuery(name = "UserInfo.findByTwoName", query = "select a from UserInfo a where a.firstName like: firstName and a.lastName like:lastName"),
-        @NamedQuery(name = "UserInfo.findByUsername",query = "select a from UserInfo a where a.username like: username")
+        @NamedQuery(name = "UserInfo.findByName", query = "Select a from UserInfo a where a.firstName like :firstName "),
+        @NamedQuery(name = "UserInfo.findByTwoName", query = "select a from UserInfo a where a.firstName like :firstName and a.lastName like :lastName"),
+        @NamedQuery(name = "UserInfo.findByUsername", query = "select a from UserInfo a where a.username like :username")
 
 })
 public class UserInfo {
@@ -43,7 +40,7 @@ public class UserInfo {
     public UserInfo() {
     }
 
-    public UserInfo(Date dateBirth, String lastName, String eMail, String firstName, String username) {
+    public UserInfo(Date dateBirth, String lastName, String firstName, String eMail, String username) {
         this.dateBirth = dateBirth;
         this.lastName = lastName;
         this.eMail = eMail;

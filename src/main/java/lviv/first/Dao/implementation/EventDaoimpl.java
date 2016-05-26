@@ -10,9 +10,7 @@ import javax.persistence.PersistenceContext;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by kobeb on 24.05.2016.
- */
+
 @Repository
 public class EventDaoimpl extends AbstractDaoimpl<Event> implements EventDao {
     @PersistenceContext(unitName = "task")
@@ -58,5 +56,10 @@ public class EventDaoimpl extends AbstractDaoimpl<Event> implements EventDao {
     @Override
     public List<Event> getAll() {
         return super.getAll();
+    }
+
+    @Override
+    public Event findById(int id) {
+        return super.findById(id);
     }
 }

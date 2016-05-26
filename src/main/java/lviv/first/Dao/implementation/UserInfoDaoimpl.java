@@ -2,7 +2,6 @@ package lviv.first.Dao.implementation;
 
 import lviv.first.Dao.UsersInfoDao;
 import lviv.first.entity.UserInfo;
-import lviv.first.entity.Users;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,9 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-/**
- * Created by kobeb on 24.05.2016.
- */
+
 @Repository
 public class UserInfoDaoimpl extends AbstractDaoimpl<UserInfo> implements UsersInfoDao {
 
@@ -22,8 +19,8 @@ public class UserInfoDaoimpl extends AbstractDaoimpl<UserInfo> implements UsersI
 
     @Transactional
     @SuppressWarnings(value = "unchecked")
-    public List<UserInfo> findByName(String name) {
-        return entityManager.createNamedQuery("UserInfo.findByName").setParameter("firstName", name).getResultList();
+    public List<UserInfo> findByName(String firstName) {
+        return entityManager.createNamedQuery("UserInfo.findByName").setParameter("firstName", firstName).getResultList();
     }
 
     @Transactional
@@ -59,5 +56,10 @@ public class UserInfoDaoimpl extends AbstractDaoimpl<UserInfo> implements UsersI
     @Override
     public List<UserInfo> getAll() {
         return super.getAll();
+    }
+
+    @Override
+    public UserInfo findById(int id) {
+        return super.findById(id);
     }
 }

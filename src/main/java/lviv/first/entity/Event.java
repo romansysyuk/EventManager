@@ -1,13 +1,10 @@
 package lviv.first.entity;
 
 
-
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by kobeb on 23.05.2016.
- */
+
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Event.findByName", query = "select a from Event a where a.eventName like :eventName"),
